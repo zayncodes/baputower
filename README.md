@@ -45,5 +45,10 @@ js/main.js      — animation & interaction engine
   `assets/img/patna-golghar-sunset.jpg`'s replacement and update the hero `<img>` src,
   alt, and caption in `index.html` — one tag, nothing else changes.
 - The contact section embeds a live Google Map of the real Bapu Tower, Gardanibagh.
+- `assets/img/bapu-tower-blur.png` (Our Story ambient art) is a heavily transformed
+  derivative — cropped, re-graded, baked-blur at 64px — of a night photograph of Bapu
+  Tower from baputower.org (Building Construction Department, Bihar), used at the site
+  owner's direction as unrecognisable ambient background art and credited in the
+  footer. Swap in your own tower photography for production use.
 - The reservation form is a front-end demo; wire it to a booking backend
   (or a service like SevenRooms/Resy) for production.

@@ -322,8 +322,11 @@ em { font-style: italic; }
 }
 .hero__panel {
   position: absolute; top: 0; right: 0; bottom: 0; z-index: -1;
-  width: clamp(340px, 45vw, 860px);
+  width: clamp(380px, 56vw, 1000px);
   overflow: hidden;
+  /* the photo dissolves into the page — no hard partition */
+  -webkit-mask-image: radial-gradient(115% 130% at 82% 52%, #000 42%, rgba(0, 0, 0, 0.55) 62%, transparent 82%);
+  mask-image: radial-gradient(115% 130% at 82% 52%, #000 42%, rgba(0, 0, 0, 0.55) 62%, transparent 82%);
 }
 .hero__img {
   width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%;
@@ -332,9 +335,9 @@ em { font-style: italic; }
 .hero__panel::after {
   content: ""; position: absolute; inset: 0;
   background:
-    linear-gradient(90deg, #0f0c08 0%, rgba(15, 12, 8, 0.62) 16%, rgba(15, 12, 8, 0) 48%),
-    linear-gradient(0deg, rgba(15, 12, 8, 0.95) 0%, rgba(15, 12, 8, 0.12) 40%, rgba(15, 12, 8, 0.5) 100%),
-    linear-gradient(0deg, rgba(122, 82, 32, 0.2), rgba(122, 82, 32, 0.2));
+    linear-gradient(90deg, rgba(15, 12, 8, 0.85) 0%, rgba(15, 12, 8, 0.4) 30%, rgba(15, 12, 8, 0.05) 60%),
+    linear-gradient(0deg, rgba(15, 12, 8, 0.9) 0%, rgba(15, 12, 8, 0.15) 42%, rgba(15, 12, 8, 0.55) 100%),
+    linear-gradient(0deg, rgba(122, 82, 32, 0.22), rgba(122, 82, 32, 0.22));
 }
 .hero__panel-caption {
   position: absolute; right: auto; left: 1.3rem; bottom: 1.2rem; z-index: 1;
@@ -355,6 +358,8 @@ em { font-style: italic; }
     position: relative; order: -1;
     width: 100%; height: 42svh; min-height: 250px;
     margin-top: 62px;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 62%, transparent 98%);
+    mask-image: linear-gradient(180deg, transparent 0%, #000 14%, #000 62%, transparent 98%);
   }
   .hero__panel::after {
     background:
@@ -434,7 +439,23 @@ em { font-style: italic; }
 .marquee__track i { color: var(--gold); font-style: normal; font-size: 0.8rem; }
 
 /* ═══════════ ABOUT ═══════════ */
-.about { background: linear-gradient(180deg, var(--ink) 0%, #151009 100%); }
+.about {
+  background: linear-gradient(180deg, var(--ink) 0%, #151009 100%);
+  overflow: hidden;
+}
+/* Bapu Tower at night — heavily blurred ambient art (baked 64px source) */
+.about__bgart {
+  position: absolute; z-index: 0; pointer-events: none;
+  left: -14%; bottom: 3%;
+  width: min(62vw, 820px); aspect-ratio: 64 / 33;
+  background: url("../assets/img/bapu-tower-blur.png") center / cover no-repeat;
+  filter: blur(22px) saturate(1.08);
+  opacity: 0.34;
+  -webkit-mask-image: radial-gradient(72% 72% at 46% 50%, #000 32%, transparent 74%);
+  mask-image: radial-gradient(72% 72% at 46% 50%, #000 32%, transparent 74%);
+  transform: translateZ(0);
+}
+.about .container { position: relative; z-index: 1; }
 .about__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
