@@ -36,19 +36,10 @@ js/main.js      — animation & interaction engine
   fine-pointer devices.
 - Food/interior photography is representational placeholder imagery from Unsplash —
   replace with final brand photography before launch.
-- Real Patna photography (hero + Bapu Tower section) is from Wikimedia Commons under
-  CC BY-SA 3.0: "GOLGHAR AT SUNSET LIGHT" by Aryan ghosh and "View of the Ganges from
-  top of Golghar" by Wikirapra. Attribution is in the site footer — keep it if you keep
-  the photos.
-- No freely-licensed photograph of Bapu Tower itself exists yet (news/Tripadvisor
-  images are copyrighted). When you have your own shot of the tower, drop it in as
-  `assets/img/patna-golghar-sunset.jpg`'s replacement and update the hero `<img>` src,
-  alt, and caption in `index.html` — one tag, nothing else changes.
+- All Bapu Tower photography is the site owner's own:
+  - `assets/img/bapu-tower-copper.jpg` — hero panel (the copper crown at golden hour)
+  - `assets/img/bapu-tower-dusk.jpg` — "The Address" section background (tower at dusk)
+  - `assets/img/bapu-tower-night.jpg` — "Our Story" ambient background art (tower lit at night)
 - The contact section embeds a live Google Map of the real Bapu Tower, Gardanibagh.
-- `assets/img/bapu-tower-blur.png` (Our Story ambient art) is a heavily transformed
-  derivative — cropped, re-graded, baked-blur at 64px — of a night photograph of Bapu
-  Tower from baputower.org (Building Construction Department, Bihar), used at the site
-  owner's direction as unrecognisable ambient background art and credited in the
-  footer. Swap in your own tower photography for production use.
 - The reservation form is a front-end demo; wire it to a booking backend
   (or a service like SevenRooms/Resy) for production.
