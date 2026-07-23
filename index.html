@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beyond Dining — Pure Vegetarian Restaurant &amp; Café at Bapu Tower, Patna</title>
+  <meta name="description" content="Beyond Dining is a 100% pure-vegetarian fine-dining restaurant and artisan café at Bapu Tower, Patna — where Bihar's culinary heritage meets the sky. Reserve your table." />
+  <meta property="og:title" content="Beyond Dining — Pure Vegetarian Restaurant &amp; Café at Bapu Tower, Patna" />
+  <meta property="og:description" content="Where Patna meets the sky. Pure-vegetarian fine dining, artisan coffee, and Bihar's heritage reimagined." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Manrope:wght@300;400;500;600;700&family=Mr+Dafoe&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>" />
+</head>
+<body data-theme="dark">
+
+  <!-- ═══════════ PRELOADER ═══════════ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__word preloader__word--script" id="preloaderWord">Beyond Dining</div>
+      <p class="preloader__tag">pure vegetarian · above patna</p>
+      <div class="preloader__bar"><span class="preloader__bar-fill" id="preloaderBar"></span></div>
+      <span class="preloader__count" id="preloaderCount">00</span>
+    </div>
+    <div class="preloader__curtain preloader__curtain--1"></div>
+    <div class="preloader__curtain preloader__curtain--2"></div>
+  </div>
+
+  <!-- ═══════════ CUSTOM CURSOR ═══════════ -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor__dot"></div>
+    <div class="cursor__ring"><span class="cursor__label"></span></div>
+  </div>
+
+  <!-- ═══════════ AMBIENT AUDIO ═══════════ -->
+  <audio id="bgAudio" src="assets/audio/serenity-loop.wav" loop preload="auto"></audio>
+  <button class="audio-toggle" id="audioToggle" aria-label="Play background music" aria-pressed="false" data-cursor="hover">
+    <span class="audio-toggle__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+  </button>
+
+  <!-- ═══════════ NAVIGATION ═══════════ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" data-cursor="hover">
+        <span class="nav__logo-script">Beyond Dining</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about" class="nav__link" data-cursor="hover"><span>Our Story</span></a>
+        <a href="#dishes" class="nav__link" data-cursor="hover"><span>Cuisine</span></a>
+        <a href="#cafe" class="nav__link" data-cursor="hover"><span>Café</span></a>
+        <a href="#menu" class="nav__link" data-cursor="hover"><span>Menu</span></a>
+        <a href="#contact" class="nav__link" data-cursor="hover"><span>Visit</span></a>
+      </nav>
+      <div class="nav__actions">
+        <a href="#reserve" class="btn btn--gold btn--nav" data-cursor="hover">
+          <span class="btn__text">Reserve a Table</span>
+        </a>
+        <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" data-cursor="hover">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════════ FULLSCREEN MENU ═══════════ -->
+  <div class="fsmenu" id="fsmenu" aria-hidden="true">
+    <div class="fsmenu__bg"></div>
+    <div class="fsmenu__content">
+      <nav class="fsmenu__links" aria-label="Fullscreen">
+        <a href="#hero" class="fsmenu__link" data-cursor="hover"><em>01</em><span>Home</span></a>
+        <a href="#about" class="fsmenu__link" data-cursor="hover"><em>02</em><span>Our Story</span></a>
+        <a href="#tower" class="fsmenu__link" data-cursor="hover"><em>03</em><span>Bapu Tower</span></a>
+        <a href="#dishes" class="fsmenu__link" data-cursor="hover"><em>04</em><span>Cuisine</span></a>
+        <a href="#cafe" class="fsmenu__link" data-cursor="hover"><em>05</em><span>Café</span></a>
+        <a href="#menu" class="fsmenu__link" data-cursor="hover"><em>06</em><span>Menu</span></a>
+        <a href="#reserve" class="fsmenu__link" data-cursor="hover"><em>07</em><span>Reserve</span></a>
+      </nav>
+      <div class="fsmenu__aside">
+        <p class="fsmenu__eyebrow">Find us</p>
+        <p>Bapu Tower, Gardanibagh<br/>Patna, Bihar 800002</p>
+        <p class="fsmenu__eyebrow">Hours</p>
+        <p>Tue – Sun · 12 pm – 11 pm<br/>Café from 9 am</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ═══════════ 1 · HERO ═══════════ -->
+    <section class="hero" id="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <figure class="hero__panel">
+        <img class="hero__img" src="assets/img/patna-golghar-sunset.jpg" alt="The Golghar dome in Patna, glowing in late-evening light" fetchpriority="high" />
+        <figcaption class="hero__panel-caption">Golghar · Patna, at dusk</figcaption>
+      </figure>
+      <div class="hero__grain" aria-hidden="true"></div>
+
+      <div class="hero__content container">
+        <p class="hero__eyebrow" data-reveal-line><span>100% Pure Vegetarian · Bapu Tower · Patna</span></p>
+        <h1 class="hero__title hero__title--script">
+          <span class="hero__title-line"><span class="hero__title-script">Beyond Dining</span></span>
+        </h1>
+        <p class="hero__sub" data-reveal>Where Patna meets the sky — a 100% pure-vegetarian fine-dining room and artisan café at Bapu Tower.</p>
+        <div class="hero__cta" data-reveal>
+          <a href="#reserve" class="btn btn--gold" data-magnetic data-cursor="hover"><span class="btn__text">Reserve a Table</span><span class="btn__arrow">→</span></a>
+          <a href="#about" class="btn btn--ghost" data-magnetic data-cursor="hover"><span class="btn__text">Discover the Story</span></a>
+        </div>
+      </div>
+
+      <div class="hero__footer container">
+        <div class="hero__scroll" data-cursor="hover">
+          <span class="hero__scroll-text">Scroll</span>
+          <span class="hero__scroll-line"><span></span></span>
+        </div>
+        <p class="hero__coords">Bapu Tower · Gardanibagh · Patna</p>
+      </div>
+    </section>
+
+    <!-- ═══════════ MARQUEE ═══════════ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" data-marquee>
+        <span>100% Pure Vegetarian</span><i>✦</i><span>Artisan Coffee</span><i>✦</i><span>Bihar Heritage</span><i>✦</i><span>Rooftop Views</span><i>✦</i>
+        <span>100% Pure Vegetarian</span><i>✦</i><span>Artisan Coffee</span><i>✦</i><span>Bihar Heritage</span><i>✦</i><span>Rooftop Views</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ═══════════ 2 · ABOUT ═══════════ -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal-line><span>02 — Our Story</span></p>
+          <h2 class="title-xl" data-split-lines>A love letter to Bihar, written in fire and flour</h2>
+        </div>
+
+        <div class="about__grid">
+          <div class="about__media" data-reveal-mask>
+            <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?auto=format&fit=crop&w=1200&q=80" alt="A chef plating a dish with tweezers under warm light" loading="lazy" />
+            <figcaption class="about__caption">The pass, an hour before service</figcaption>
+          </div>
+          <div class="about__media about__media--offset" data-reveal-mask data-parallax="0.15">
+            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80" alt="Warm, softly lit dining room with layered textures" loading="lazy" />
+            <figcaption class="about__caption">The dining room at golden hour</figcaption>
+          </div>
+          <div class="about__text">
+            <p class="lead" data-reveal>Beyond Dining began with a simple question — <em>why should Bihar's vegetarian table, one of the oldest cuisines on earth, not be served with the ceremony it deserves?</em></p>
+            <p data-reveal>Our kitchen takes what generations of Bihari homes have perfected — litti smoked over open flame, paneer dum-cooked the Champaran way in sealed clay handis, sattu ground fresh each morning — and gives it the space, technique, and theatre of a modern fine-dining room. Every plate is, and will always be, 100% vegetarian.</p>
+            <p data-reveal>The café is our softer side: a slow-morning room of single-origin coffee, French pastry, and khaja from Silao — because heritage tastes best unhurried.</p>
+            <div class="about__stats" data-reveal>
+              <div class="stat"><span class="stat__num" data-count="12">0</span><span class="stat__label">Course tasting journey</span></div>
+              <div class="stat"><span class="stat__num" data-count="38">0</span><span class="stat__label">Dishes from 38 villages</span></div>
+              <div class="stat"><span class="stat__num" data-count="120">0</span><span class="stat__label">Feet of landmark address</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 3 · BAPU TOWER ═══════════ -->
+    <section class="tower section" id="tower">
+      <div class="tower__bg" data-parallax-media>
+        <img src="assets/img/patna-skyline-golghar.jpg" alt="Golden-hour view over Patna's rooftops and the Ganga floodplain, seen from the Golghar dome" loading="lazy" />
+        <div class="tower__veil"></div>
+      </div>
+      <div class="container tower__content">
+        <p class="eyebrow eyebrow--light" data-reveal-line><span>03 — The Address</span></p>
+        <h2 class="title-xl title-xl--light" data-split-lines>Inside Patna's new landmark</h2>
+        <div class="tower__cols">
+          <div class="tower__col" data-reveal>
+            <p class="lead lead--light">Bapu Tower rises from Gardanibagh as Bihar's tribute to Mahatma Gandhi — a six-floor, inverted-cone museum of his life and values, its copper crown widening toward the sky.</p>
+            <p class="tower__note">Beyond Dining is honoured to share this address. We keep the tribute where it belongs — in the tower's galleries below — and offer, in return, a table where Bihar's living culture is celebrated every evening.</p>
+          </div>
+          <ul class="tower__facts">
+            <li data-reveal><span class="tower__fact-num">01</span><div><h3>The Skyline</h3><p>Floor-to-ceiling glass frames Patna's rooftops — from Gardanibagh's greens to the Ganga's haze on the horizon.</p></div></li>
+            <li data-reveal><span class="tower__fact-num">02</span><div><h3>The Heritage</h3><p>Steps from the museum galleries — arrive early, walk the exhibits, then dine above them.</p></div></li>
+            <li data-reveal><span class="tower__fact-num">03</span><div><h3>The Golden Hour</h3><p>Sunset over the city from the tower's upper floors. We hold our best window tables for it.</p></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 4 · SIGNATURE DISHES ═══════════ -->
+    <section class="dishes section" id="dishes">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <p class="eyebrow" data-reveal-line><span>04 — Cuisine</span></p>
+            <h2 class="title-xl" data-split-lines>Signatures of the house</h2>
+          </div>
+          <p class="section-head__note" data-reveal>Bihar's canon, re-plated. Each dish begins in a village kitchen and ends under a cloche.</p>
+        </div>
+
+        <div class="dishes__grid">
+          <article class="dish-card" data-reveal data-tilt data-cursor="view">
+            <div class="dish-card__media"><img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=1000&q=80" alt="Rustic curry served in brass, garnished with herbs" loading="lazy" /></div>
+            <div class="dish-card__body">
+              <span class="dish-card__index">№ 01</span>
+              <h3>Litti, Three Ways</h3>
+              <p>Smoked sattu litti with tomato chokha, brown-butter ghee, and a charred baingan emulsion.</p>
+              <span class="dish-card__price">₹ 745</span>
+            </div>
+            <span class="dish-card__badge">Chef's Special</span>
+          </article>
+
+          <article class="dish-card" data-reveal data-tilt data-cursor="view">
+            <div class="dish-card__media"><img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1000&q=80" alt="Paneer and vegetables slow-cooking in a pan with herbs" loading="lazy" /></div>
+            <div class="dish-card__body">
+              <span class="dish-card__index">№ 02</span>
+              <h3>Ahuna Dum Paneer</h3>
+              <p>Malai paneer sealed in a clay handi with mustard oil and whole garlic, slow-cooked the Champaran way. Cracked open at your table.</p>
+              <span class="dish-card__price">₹ 945</span>
+            </div>
+          </article>
+
+          <article class="dish-card" data-reveal data-tilt data-cursor="view">
+            <div class="dish-card__media"><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1000&q=80" alt="Elegant plated vegetarian dish with tomatoes and micro-greens" loading="lazy" /></div>
+            <div class="dish-card__body">
+              <span class="dish-card__index">№ 03</span>
+              <h3>Makhana Risotto</h3>
+              <p>Fox nuts from Mithila's ponds, finished like a risotto with parmesan, saffron, and lotus crisp.</p>
+              <span class="dish-card__price">₹ 895</span>
+            </div>
+          </article>
+
+          <article class="dish-card" data-reveal data-tilt data-cursor="view">
+            <div class="dish-card__media"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1000&q=80" alt="Colourful bowls of fresh vegetarian food" loading="lazy" /></div>
+            <div class="dish-card__body">
+              <span class="dish-card__index">№ 04</span>
+              <h3>Ganga Kinare Thali</h3>
+              <p>A nine-bowl seasonal thali — dal pitha, kadhi badi, chura-dahi, and whatever the river markets bring.</p>
+              <span class="dish-card__price">₹ 1,395</span>
+            </div>
+            <span class="dish-card__badge">Seasonal</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 5 · CAFÉ EXPERIENCE ═══════════ -->
+    <section class="cafe section" id="cafe">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal-line><span>05 — The Café</span></p>
+          <h2 class="title-xl" data-split-lines>Slow mornings, high above</h2>
+        </div>
+
+        <div class="cafe__grid">
+          <a class="cafe-tile cafe-tile--tall" data-reveal data-cursor="view" href="#menu">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1000&q=80" alt="Latte art poured into a ceramic cup" loading="lazy" />
+            <div class="cafe-tile__overlay">
+              <h3>Coffee</h3>
+              <p>Single-origin beans from Chikmagalur &amp; Araku, roasted for us weekly.</p>
+              <span class="cafe-tile__link">Explore →</span>
+            </div>
+          </a>
+          <a class="cafe-tile" data-reveal data-cursor="view" href="#menu">
+            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1000&q=80" alt="Layered dessert in glass with caramel" loading="lazy" />
+            <div class="cafe-tile__overlay">
+              <h3>Desserts</h3>
+              <p>Thekua tiramisu. Khaja mille-feuille. You read that correctly.</p>
+              <span class="cafe-tile__link">Explore →</span>
+            </div>
+          </a>
+          <a class="cafe-tile" data-reveal data-cursor="view" href="#menu">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80" alt="Fresh artisan bread loaves on a wooden counter" loading="lazy" />
+            <div class="cafe-tile__overlay">
+              <h3>Bakery</h3>
+              <p>Sourdough, laminated pastry, and sattu-stuffed croissants each dawn.</p>
+              <span class="cafe-tile__link">Explore →</span>
+            </div>
+          </a>
+          <a class="cafe-tile cafe-tile--wide" data-reveal data-cursor="view" href="#menu">
+            <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=1400&q=80" alt="Iced specialty beverage with citrus and herbs" loading="lazy" />
+            <div class="cafe-tile__overlay">
+              <h3>Specialty Beverages</h3>
+              <p>Sattu cold-brew shakes, aam panna spritz, kulhad chai flights.</p>
+              <span class="cafe-tile__link">Explore →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 6 · AMBIENCE ═══════════ -->
+    <section class="ambience section" id="ambience">
+      <div class="container">
+        <div class="section-head section-head--split">
+          <div>
+            <p class="eyebrow" data-reveal-line><span>06 — Ambience</span></p>
+            <h2 class="title-xl" data-split-lines>Rooms with a mood</h2>
+          </div>
+          <div class="ambience__nav" data-reveal>
+            <button class="ambience__btn" id="ambPrev" aria-label="Previous image" data-cursor="hover">←</button>
+            <button class="ambience__btn" id="ambNext" aria-label="Next image" data-cursor="hover">→</button>
+          </div>
+        </div>
+      </div>
+      <div class="ambience__slider" id="ambSlider" data-cursor="drag">
+        <div class="ambience__track" id="ambTrack">
+          <figure class="ambience__slide"><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1400&q=80" alt="Warm café lounge with armchairs and soft light" loading="lazy" /><figcaption>The Café Lounge</figcaption></figure>
+          <figure class="ambience__slide"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80" alt="Elegant dining room with warm pendant lights" loading="lazy" /><figcaption>The Dining Room</figcaption></figure>
+          <figure class="ambience__slide"><img src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?auto=format&fit=crop&w=1400&q=80" alt="Sunlit café corner with plants and cane chairs" loading="lazy" /><figcaption>The Café, mid-morning</figcaption></figure>
+          <figure class="ambience__slide"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1400&q=80" alt="Coffee counter with barista equipment and warm wood" loading="lazy" /><figcaption>The Coffee Counter</figcaption></figure>
+          <figure class="ambience__slide"><img src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1400&q=80" alt="Espresso served on a wooden café table" loading="lazy" /><figcaption>The Espresso Bar</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 7 · MENU PREVIEW ═══════════ -->
+    <section class="menu section" id="menu">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal-line><span>07 — Menu</span></p>
+          <h2 class="title-xl" data-split-lines>A preview of the table</h2>
+        </div>
+
+        <div class="menu__tabs" role="tablist" data-reveal>
+          <button class="menu__tab is-active" role="tab" aria-selected="true" data-tab="dinner" data-cursor="hover">Dinner</button>
+          <button class="menu__tab" role="tab" aria-selected="false" data-tab="cafe" data-cursor="hover">Café</button>
+          <button class="menu__tab" role="tab" aria-selected="false" data-tab="dessert" data-cursor="hover">Dessert</button>
+        </div>
+
+        <div class="menu__panels">
+          <ul class="menu__panel is-active" data-panel="dinner">
+            <li class="menu__item" data-reveal><div><h3>Litti, Three Ways</h3><p>smoked sattu · tomato chokha · brown-butter ghee</p></div><span class="menu__dots"></span><span class="menu__price">745</span></li>
+            <li class="menu__item" data-reveal><div><h3>Ahuna Dum Paneer</h3><p>clay-sealed handi · mustard oil · slow dum</p></div><span class="menu__dots"></span><span class="menu__price">945</span></li>
+            <li class="menu__item" data-reveal><div><h3>Makhana Risotto</h3><p>mithila fox nut · saffron · lotus crisp</p></div><span class="menu__dots"></span><span class="menu__price">895</span></li>
+            <li class="menu__item" data-reveal><div><h3>Dal Pitha</h3><p>rice-flour crescents · ghee-tempered dal · pickled radish</p></div><span class="menu__dots"></span><span class="menu__price">675</span></li>
+            <li class="menu__item" data-reveal><div><h3>Ganga Kinare Thali</h3><p>nine bowls · whatever the river markets bring</p></div><span class="menu__dots"></span><span class="menu__price">1,395</span></li>
+          </ul>
+          <ul class="menu__panel" data-panel="cafe">
+            <li class="menu__item" data-reveal><div><h3>Single-Origin Pourover</h3><p>rotating estate · chikmagalur / araku</p></div><span class="menu__dots"></span><span class="menu__price">345</span></li>
+            <li class="menu__item" data-reveal><div><h3>Sattu Cold-Brew Shake</h3><p>18-hour cold brew · roasted gram · jaggery</p></div><span class="menu__dots"></span><span class="menu__price">395</span></li>
+            <li class="menu__item" data-reveal><div><h3>Kulhad Chai Flight</h3><p>three terroirs of assam · clay-fired cups</p></div><span class="menu__dots"></span><span class="menu__price">425</span></li>
+            <li class="menu__item" data-reveal><div><h3>Sattu Croissant</h3><p>82-layer lamination · spiced sattu heart</p></div><span class="menu__dots"></span><span class="menu__price">285</span></li>
+          </ul>
+          <ul class="menu__panel" data-panel="dessert">
+            <li class="menu__item" data-reveal><div><h3>Thekua Tiramisu</h3><p>chhath thekua crumb · mascarpone · araku espresso</p></div><span class="menu__dots"></span><span class="menu__price">495</span></li>
+            <li class="menu__item" data-reveal><div><h3>Khaja Mille-Feuille</h3><p>silao khaja · chantilly · rose petal</p></div><span class="menu__dots"></span><span class="menu__price">545</span></li>
+            <li class="menu__item" data-reveal><div><h3>Makhana Kheer Brûlée</h3><p>fox nut kheer · torched jaggery glass</p></div><span class="menu__dots"></span><span class="menu__price">465</span></li>
+          </ul>
+        </div>
+
+        <div class="menu__cta" data-reveal>
+          <a href="#reserve" class="btn btn--outline" data-magnetic data-cursor="hover"><span class="btn__text">The full menu awaits at your table</span><span class="btn__arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 8 · TESTIMONIALS ═══════════ -->
+    <section class="quotes section" id="quotes">
+      <div class="container">
+        <p class="eyebrow eyebrow--center" data-reveal-line><span>08 — Word of Mouth</span></p>
+        <div class="quotes__stage" id="quotesStage">
+          <blockquote class="quote is-active">
+            <p>“I came for the view and stayed three hours for the litti. My grandmother's kitchen, wearing a tuxedo.”</p>
+            <footer><cite>Ananya S.</cite><span>Patna</span></footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>“The dum paneer arrives still sealed in its clay handi. When they crack it open at the table, the whole room turns to look.”</p>
+            <footer><cite>Rohan M.</cite><span>Delhi</span></footer>
+          </blockquote>
+          <blockquote class="quote">
+            <p>“Sunset over the Ganga, a kulhad chai flight, and khaja mille-feuille. Patna has never felt this glamorous.”</p>
+            <footer><cite>Meera K.</cite><span>Bengaluru</span></footer>
+          </blockquote>
+        </div>
+        <div class="quotes__dots" id="quotesDots" role="tablist" aria-label="Testimonials">
+          <button class="is-active" aria-label="Testimonial 1" data-cursor="hover"></button>
+          <button aria-label="Testimonial 2" data-cursor="hover"></button>
+          <button aria-label="Testimonial 3" data-cursor="hover"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ 9 · RESERVATION ═══════════ -->
+    <section class="reserve section" id="reserve">
+      <div class="reserve__bg" data-parallax-media>
+        <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=2000&q=80" alt="" aria-hidden="true" loading="lazy" />
+        <div class="reserve__veil"></div>
+      </div>
+      <div class="container reserve__inner">
+        <div class="reserve__intro">
+          <p class="eyebrow eyebrow--light" data-reveal-line><span>09 — Reservations</span></p>
+          <h2 class="title-xl title-xl--light" data-split-lines>Your table above the city</h2>
+          <p class="lead lead--light" data-reveal>Window tables for sunset are released thirty days ahead and go quickly. For parties of eight or more, or the chef's counter, call us directly.</p>
+          <p class="reserve__phone" data-reveal><a href="tel:+916120000000" data-cursor="hover">+91 612 000 0000</a></p>
+        </div>
+        <form class="reserve__form glass" id="reserveForm" data-reveal novalidate>
+          <div class="field"><label for="rName">Name</label><input id="rName" name="name" type="text" placeholder="Your full name" autocomplete="name" required /></div>
+          <div class="field-row">
+            <div class="field"><label for="rDate">Date</label><input id="rDate" name="date" type="date" required /></div>
+            <div class="field"><label for="rTime">Time</label>
+              <select id="rTime" name="time" required>
+                <option value="">Select</option><option>12:30 pm</option><option>1:30 pm</option><option>6:30 pm</option><option>7:30 pm</option><option>8:30 pm</option><option>9:30 pm</option>
+              </select>
+            </div>
+            <div class="field"><label for="rGuests">Guests</label>
+              <select id="rGuests" name="guests" required>
+                <option value="">Select</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7+</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="rPhone">Phone</label><input id="rPhone" name="phone" type="tel" placeholder="+91" autocomplete="tel" required /></div>
+          <div class="field"><label for="rNote">Occasion <span>(optional)</span></label><input id="rNote" name="note" type="text" placeholder="Anniversary, sunset request, dietary notes…" /></div>
+          <button type="submit" class="btn btn--gold btn--full" data-cursor="hover"><span class="btn__text">Request Reservation</span><span class="btn__arrow">→</span></button>
+          <p class="reserve__confirm" id="reserveConfirm" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ═══════════ 10 · LOCATION & CONTACT ═══════════ -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow" data-reveal-line><span>10 — Visit</span></p>
+          <h2 class="title-xl" data-split-lines>Finding your way up</h2>
+        </div>
+        <div class="contact__grid">
+          <div class="contact__map" data-reveal-mask>
+            <iframe
+              src="https://maps.google.com/maps?q=Bapu%20Tower%2C%20Patna%2C%20Bihar&z=16&output=embed"
+              title="Map showing Bapu Tower, Patna — location of Beyond Dining"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+            <div class="contact__pin" aria-hidden="true"><span></span>Beyond Dining · Bapu Tower</div>
+            <a class="contact__directions btn btn--gold" href="https://maps.google.com/maps?q=Bapu+Tower,+Patna,+Bihar" target="_blank" rel="noopener" data-cursor="hover"><span class="btn__text">Get Directions</span><span class="btn__arrow">→</span></a>
+          </div>
+          <div class="contact__info">
+            <div class="contact__block" data-reveal>
+              <h3>Address</h3>
+              <p>Upper Floors, Bapu Tower<br/>Gardanibagh<br/>Patna, Bihar 800002</p>
+            </div>
+            <div class="contact__block" data-reveal>
+              <h3>Hours</h3>
+              <p>Café · Tue–Sun · 9 am – 6 pm<br/>Dinner · Tue–Sun · 6:30 pm – 11 pm<br/>Closed Mondays</p>
+            </div>
+            <div class="contact__block" data-reveal>
+              <h3>Contact</h3>
+              <p><a href="tel:+916120000000" data-cursor="hover">+91 612 000 0000</a><br/><a href="mailto:table@beyonddining.in" data-cursor="hover">table@beyonddining.in</a></p>
+            </div>
+            <div class="contact__block" data-reveal>
+              <h3>Getting here</h3>
+              <p>Ten minutes from Patna Junction, on the Gardanibagh greens. Valet at the tower's east entrance; take the express lift to the restaurant floors.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════ 11 · FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <a href="#hero" class="footer__logo" data-cursor="hover"><img class="footer__sign" src="assets/img/beyond-dining-sign.png" alt="Beyond Dining — neon sign" loading="lazy" width="900" height="598" /></a>
+        <p class="footer__tag">pure vegetarian · where patna meets the sky</p>
+      </div>
+      <div class="footer__grid">
+        <nav class="footer__col" aria-label="Footer">
+          <h4>Explore</h4>
+          <a href="#about" data-cursor="hover">Our Story</a>
+          <a href="#dishes" data-cursor="hover">Cuisine</a>
+          <a href="#cafe" data-cursor="hover">Café</a>
+          <a href="#menu" data-cursor="hover">Menu</a>
+        </nav>
+        <div class="footer__col">
+          <h4>Visit</h4>
+          <p>Bapu Tower, Gardanibagh<br/>Patna, Bihar 800002</p>
+          <a href="tel:+916120000000" data-cursor="hover">+91 612 000 0000</a>
+        </div>
+        <div class="footer__col">
+          <h4>Follow</h4>
+          <a href="#" data-cursor="hover">Instagram</a>
+          <a href="#" data-cursor="hover">Facebook</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Beyond Dining, Patna. All rights reserved. 100% pure vegetarian.</p>
+        <p>Interior &amp; food imagery is representational. Patna photographs by <a href="https://commons.wikimedia.org/wiki/File:GOLGHAR_AT_SUNSET_LIGHT._BRITISH_PATNA..JPG" target="_blank" rel="noopener" data-cursor="hover">Aryan ghosh</a> &amp; <a href="https://commons.wikimedia.org/wiki/File:View_of_the_Ganges_from_top_of_Golghar,_Patna,_Bihar,_India.jpg" target="_blank" rel="noopener" data-cursor="hover">Wikirapra</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener" data-cursor="hover">CC BY-SA 3.0</a>, via Wikimedia Commons.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
