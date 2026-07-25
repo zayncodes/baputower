@@ -212,8 +212,7 @@
       gsap.to(lines, {
         y: 0, yPercent: 0, duration: 1.1, stagger: 0.1, ease: "power4.out",
         scrollTrigger: { trigger: el, start: "top 85%" },
-        onStart: () => {},
-        startAt: { yPercent: 110 },
+        startAt: { yPercent: 125 },
       });
     });
 
@@ -331,7 +330,7 @@
     const maxOffset = () => Math.max(0, ambTrack.scrollWidth - slider.clientWidth + 40);
     const setOffset = (v, dur = 0.9) => {
       offset = Math.max(0, Math.min(v, maxOffset()));
-      gsap.to(ambTrack, { x: -offset, duration: dur, ease: "power3.out" });
+      gsap.to(ambTrack, { x: -offset, duration: dur, ease: "power3.out", overwrite: true });
     };
     const step = () => {
       const slide = ambTrack.querySelector(".ambience__slide");
@@ -340,20 +339,39 @@
     document.getElementById("ambNext").addEventListener("click", () => setOffset(offset + step()));
     document.getElementById("ambPrev").addEventListener("click", () => setOffset(offset - step()));
 
-    // Pointer drag
+    // Pointer drag — 1:1 tracking while the pointer is down, a rubber-band
+    // past the edges, and a touch of momentum on release
     let dragging = false, startX = 0, startOffset = 0;
+    let lastX = 0, lastT = 0, velocity = 0;
     slider.addEventListener("pointerdown", (e) => {
-      dragging = true; startX = e.clientX; startOffset = offset;
+      dragging = true;
+      startX = lastX = e.clientX; startOffset = offset;
+      lastT = performance.now(); velocity = 0;
       slider.classList.add("is-dragging");
       slider.setPointerCapture(e.pointerId);
+      gsap.killTweensOf(ambTrack);
     });
     slider.addEventListener("pointermove", (e) => {
       if (!dragging) return;
-      setOffset(startOffset - (e.clientX - startX) * 1.4, 0.3);
+      const now = performance.now();
+      if (now > lastT) { velocity = (e.clientX - lastX) / (now - lastT); lastT = now; lastX = e.clientX; }
+      let v = startOffset - (e.clientX - startX);
+      const max = maxOffset();
+      if (v < 0) v *= 0.35;
+      else if (v > max) v = max + (v - max) * 0.35;
+      offset = v;
+      gsap.set(ambTrack, { x: -offset });
     });
-    const endDrag = () => { dragging = false; slider.classList.remove("is-dragging"); };
+    const endDrag = () => {
+      if (!dragging) return;
+      dragging = false;
+      slider.classList.remove("is-dragging");
+      setOffset(offset - velocity * 160, 0.8);
+    };
     slider.addEventListener("pointerup", endDrag);
     slider.addEventListener("pointercancel", endDrag);
+    slider.addEventListener("lostpointercapture", endDrag);
+    ambTrack.addEventListener("dragstart", (e) => e.preventDefault());
     window.addEventListener("resize", () => setOffset(offset, 0));
   }
 

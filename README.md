@@ -38,7 +38,7 @@ js/main.js      — animation & interaction engine
   replace with final brand photography before launch.
 - All Bapu Tower photography is the site owner's own:
   - `assets/img/bapu-tower-copper.jpg` — hero panel (the copper crown at golden hour)
-  - `assets/img/bapu-tower-dusk.jpg` — "The Address" section background (tower at dusk)
+  - `assets/img/bapu-tower-landmark.jpg` — "The Address" section background (the tower over the Gardanibagh lawns)
   - `assets/img/bapu-tower-night.jpg` — "Our Story" ambient background art (tower lit at night)
 - The contact section embeds a live Google Map of the real Bapu Tower, Gardanibagh.
 - The reservation form is a front-end demo; wire it to a booking backend
