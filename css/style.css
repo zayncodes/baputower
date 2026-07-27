@@ -425,30 +425,34 @@ em { font-style: italic; }
      sitting below it, so none of the screen is spent on empty black */
   .hero__panel {
     position: relative; order: -1;
-    width: 100%; height: 54svh; min-height: 260px;
+    width: 100%; height: 64svh; min-height: 260px;
     margin-top: 0;
   }
+  /* hold the photo solid well down the panel so more of the tower reads,
+     then dissolve over the last fifth */
   .hero__panel-media {
-    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
-    mask-image: linear-gradient(180deg, #000 0%, #000 72%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 80%, transparent 100%);
+    mask-image: linear-gradient(180deg, #000 0%, #000 80%, transparent 100%);
   }
   /* Only two jobs left for the overlay: keep the nav readable over the sky,
      and settle the photo into the page at the bottom. The middle stays clear. */
   .hero__panel-media::after {
     background:
-      linear-gradient(180deg, rgba(15, 12, 8, 0.8) 0%, rgba(15, 12, 8, 0.42) 9%, rgba(15, 12, 8, 0.1) 19%, transparent 30%),
-      linear-gradient(0deg, #0f0c08 0%, rgba(15, 12, 8, 0.1) 34%, transparent 55%),
+      linear-gradient(180deg, rgba(15, 12, 8, 0.8) 0%, rgba(15, 12, 8, 0.44) 8%, rgba(15, 12, 8, 0.1) 17%, transparent 28%),
+      linear-gradient(0deg, #0f0c08 0%, rgba(15, 12, 8, 0.06) 20%, transparent 38%),
       linear-gradient(0deg, rgba(122, 82, 32, 0.12), rgba(122, 82, 32, 0.12));
   }
   /* crop from the top of the photo so the tower's crown — not the middle
      of its wall — is what fills the panel */
   .hero__img { object-position: 50% 12%; }
-  /* sit the pill where the photo is still solid, not in the fade */
-  .hero__panel-caption { left: 1rem; bottom: 28%; }
+  /* anchored near the foot of the photo, not floating in the middle of it */
+  .hero__panel-caption { left: 1rem; bottom: 12%; }
   .hero__content { padding-top: 1rem; padding-bottom: 2.2rem; }
   .hero__eyebrow { margin-bottom: 1.4rem; }
   .hero__sub { margin-top: 1.2rem; }
-  .hero__cta { margin-top: 1.8rem; }
+  /* the pair reads oversized at full desktop scale once it stacks */
+  .hero__cta { margin-top: 1.6rem; gap: 0.7rem; }
+  .hero__cta .btn { padding: 0.8rem 1.5rem; font-size: 0.68rem; letter-spacing: 0.13em; gap: 0.6rem; }
   .hero__footer { margin-top: 1.8rem; }
 }
 
