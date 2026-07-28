@@ -30,10 +30,12 @@
   --ease-luxe: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
-/* The section rhythm read as too airy on large screens. Tightened here only —
-   phones stay on the 6rem floor above, untouched. */
+/* The section rhythm read as too airy on large screens — worst through the
+   plain dark run (Cuisine → Café → Ambience → Menu → Word of Mouth), where no
+   background photography fills the void. One value keeps every gap identical.
+   Phones stay on the 6rem floor above, untouched. */
 @media (min-width: 901px) {
-  :root { --space-section: clamp(6rem, 9vw, 8.5rem); }
+  :root { --space-section: clamp(5rem, 6.5vw, 6.5rem); }
 }
 
 /* ── Reset ── */
