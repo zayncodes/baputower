@@ -11,6 +11,10 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- the map embed is slow to hand shake; get the connections out of the way early -->
+  <link rel="preconnect" href="https://maps.google.com" />
+  <link rel="preconnect" href="https://maps.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.google.com" />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400&family=Manrope:wght@300;400;500;600;700&family=Mr+Dafoe&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -425,11 +429,16 @@
         <div class="contact__grid">
           <div class="contact__map" data-reveal-mask>
             <iframe
-              src="https://maps.google.com/maps?q=Bapu%20Tower%2C%20Patna%2C%20Bihar&z=16&output=embed"
+              data-src="https://maps.google.com/maps?q=Bapu%20Tower%2C%20Patna%2C%20Bihar&z=16&output=embed"
               title="Map showing Bapu Tower, Patna — location of Beyond Dining"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               allowfullscreen></iframe>
+            <noscript><iframe
+              src="https://maps.google.com/maps?q=Bapu%20Tower%2C%20Patna%2C%20Bihar&z=16&output=embed"
+              title="Map showing Bapu Tower, Patna — location of Beyond Dining"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe></noscript>
             <div class="contact__pin" aria-hidden="true"><span></span>Beyond Dining · Bapu Tower</div>
             <a class="contact__directions btn btn--gold" href="https://maps.google.com/maps?q=Bapu+Tower,+Patna,+Bihar" target="_blank" rel="noopener" data-cursor="hover"><span class="btn__text">Get Directions</span><span class="btn__arrow">→</span></a>
           </div>

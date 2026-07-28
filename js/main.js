@@ -481,6 +481,33 @@
     tryPlay(); // some browsers allow it outright
   }
 
+  /* ═══════════ MAP ═══════════ */
+  // The Google embed takes seconds to hand shake and boot its own scripts, so
+  // waiting until it scrolls into view means watching it load. Start it once
+  // the page is idle instead — off the critical path, but warm on arrival.
+  const mapFrame = document.querySelector(".contact__map iframe[data-src]");
+  if (mapFrame) {
+    let started = false;
+    const loadMap = () => {
+      if (started) return;
+      started = true;
+      mapFrame.src = mapFrame.dataset.src;
+    };
+    window.addEventListener("load", () => {
+      if ("requestIdleCallback" in window) requestIdleCallback(loadMap, { timeout: 2500 });
+      else setTimeout(loadMap, 1200);
+    });
+    // …and straight away for anyone who scrolls down before that.
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) { loadMap(); io.disconnect(); }
+      }, { rootMargin: "1000px 0px" });
+      io.observe(mapFrame);
+    } else {
+      loadMap();
+    }
+  }
+
   /* ═══════════ Refresh triggers once images size in ═══════════ */
   window.addEventListener("load", () => ScrollTrigger.refresh());
 })();
